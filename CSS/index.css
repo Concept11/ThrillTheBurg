@@ -16,6 +16,10 @@ hr {
     border-color: #FFFFFF;
 }
 
+.hpot {
+    display: none;
+}
+
 .jumbotron {
     position: relative;
     background-color: #4F5F3E;

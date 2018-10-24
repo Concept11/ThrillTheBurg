@@ -1,3 +1,15 @@
+var config = {
+    apiKey: "AIzaSyDu263vpDxdvh3DIFy2nh93NBwzWLI6Wys",
+    authDomain: "c11-thrilltheburg.firebaseapp.com",
+    databaseURL: "https://c11-thrilltheburg.firebaseio.com",
+    projectId: "c11-thrilltheburg",
+    storageBucket: "c11-thrilltheburg.appspot.com",
+    messagingSenderId: "754839820372"
+};
+firebase.initializeApp(config);
+
+var messagesRef = firebase.database().ref("contactforms");
+
 $(".jumbotron").css({ height: $(window).height() + "px" });
 
 $(window).on("resize", function () {
@@ -7,6 +19,43 @@ $(window).on("resize", function () {
 $(window).scroll(function(){
     $(".arrow").css("opacity", 1 - $(window).scrollTop() / 250);
 });
+
+document.getElementById("contactForm").addEventListener("submit", submitForm);
+
+function submitForm(event) {
+    event.preventDefault();
+
+    var firstName = getInputValue("firstName");
+    var lastName = getInputValue("lastName");
+    var email = getInputValue("email");
+
+    saveMessage(firstName, lastName, email);
+    clearForm();
+}
+
+function getInputValue(id) {
+    return document.getElementById(id).value;
+}
+
+function saveMessage(firstName, lastName, email) {
+    var newMessageRef = messagesRef.push();
+    newMessageRef.set({
+        firstName: firstName,
+        lastName: lastName,
+        email: email
+    });
+}
+
+function clearForm() {
+    var f = document.forms['contactForm'];
+    for (var i = 0, fLen = f.length; i < fLen; i++) {
+        f.elements[i].readOnly = true;
+    }
+    document.getElementById("submit").textContent = "Submitted";
+    document.getElementById("submit").innerText = "Submitted";
+    document.getElementById("submit").style.backgroundColor = "#D18A20";
+    document.getElementById("submit").style.borderColor = "#D18A20";
+}
 
 function amCountdown() {
     var now = new Date();
@@ -34,7 +83,6 @@ function amCountdown() {
     document.getElementById("amTimer").innerText = d + " : " + h + " : " + m + " : " + s;
 
     setTimeout(amCountdown, 1000);
-
 }
 
 function pmCountdown() {
@@ -63,7 +111,6 @@ function pmCountdown() {
     document.getElementById("pmTimer").innerText = d + " : " + h + " : " + m + " : " + s;
 
     setTimeout(pmCountdown, 1000);
-
 }
 
 amCountdown();
