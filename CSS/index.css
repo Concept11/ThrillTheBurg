@@ -1,6 +1,6 @@
 body {
-    background-color: white;
     font-family: 'Roboto Slab';
+    color: #FFFFFF;
 }
 
 ul {
@@ -12,9 +12,13 @@ li {
     list-style-type: none;
 }
 
+hr {
+    border-color: #FFFFFF;
+}
+
 .jumbotron {
     position: relative;
-    background-color: #101010;
+    background-color: #4F5F3E;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -26,7 +30,7 @@ li {
     width: 100%;
     height: 100%;
     background-image: url('../Images/ThrillTheBurgMobile1.png');
-    background-position: center;
+    background-position: 20% 50%;
     background-size: 95%;
     background-repeat: no-repeat;
 }
@@ -48,12 +52,12 @@ li {
 }
 
 .main h1 {
-    color: #39b54a;
+    color: #C2614C;
     font-weight: bold;
 }
 
 .main h2 {
-    color: #662d91;
+    color: #D18A20;
     font-weight: bold;
 }
 
@@ -67,11 +71,26 @@ li {
 
 #mainContainer {
     padding-top: 15px;
+    background-color: #2E2E2E;
 }
 
 .con3 {
-    background-color: #39b54a;
+    background-color: #4F5F3E;
     padding: 20px;
+}
+
+.con3 h4 {
+    color: #FFFFFF;
+}
+
+.btn {
+    background-color: #2E2E2E;
+    border-color: #2E2E2E;
+}
+
+.btn:hover {
+    background-color: #D18A20;
+    border-color: #D18A20;
 }
 
 .form-control {
@@ -89,24 +108,6 @@ li {
 
     100% {
         bottom: 20px;
-    }
-}
-
-@include media-breakpoint-up(sm) {
-    html {
-        font-size: 1.2rem;
-    }
-}
-
-@include media-breakpoint-up(md) {
-    html {
-        font-size: 1.4rem;
-    }
-}
-
-@include media-breakpoint-up(lg) {
-    html {
-        font-size: 1.6rem;
     }
 }
 
