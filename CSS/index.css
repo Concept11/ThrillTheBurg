@@ -1,5 +1,15 @@
 body {
     background-color: white;
+    font-family: 'Roboto Slab';
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style-type: none;
 }
 
 .jumbotron {
@@ -9,14 +19,15 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
+    margin-bottom: 0;
 }
 
 .image-container {
     width: 100%;
     height: 100%;
-    background-image: url('../Images/ThrillTheBurgDesktop1.png');
+    background-image: url('../Images/ThrillTheBurgMobile1.png');
     background-position: center;
-    background-size: 80%;
+    background-size: 95%;
     background-repeat: no-repeat;
 }
 
@@ -31,42 +42,40 @@ body {
     width: 50px;
 }
 
-h1 {
-    font-size: 500%;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: bold;
-}
-
-h2 {
-    font-size: 300%;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: bold;
-}
-
-h3 {
-    font-size: 150%;
-    font-family: 'Open Sans', sans-serif;
-}
-
-p {
-    font-size: 150%;
-    font-family: 'Quicksand', sans-serif;
-}
-
-li {
-    list-style: none;
-}
-
 .row {
     margin: 0;
     padding: 0;
 }
 
-#container2 {
+.main h1 {
+    color: #39b54a;
+    font-weight: bold;
+}
+
+.main h2 {
+    color: #662d91;
+    font-weight: bold;
+}
+
+.con1 h1 {
+    font-weight: bold;
+}
+
+.con1 h4 {
+    color: #662d91;
+}
+
+#mainContainer {
+    padding-top: 15px;
+}
+
+.con3 {
     background-color: #39b54a;
-    padding-top: 20px;
-    padding-left: 20px;
-    padding-bottom: 20px;
+    padding: 20px;
+}
+
+.form-control {
+    margin-bottom: 10px;
 }
 
 @keyframes bouncing {
@@ -81,4 +90,68 @@ li {
     100% {
         bottom: 20px;
     }
+}
+
+@include media-breakpoint-up(sm) {
+    html {
+        font-size: 1.2rem;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    html {
+        font-size: 1.4rem;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    html {
+        font-size: 1.6rem;
+    }
+}
+
+@media screen and (min-width: 576px) {
+
+}
+
+@media screen and (min-width: 768px) {
+    .image-container {
+        width: 100%;
+        height: 100%;
+        background-image: url('../Images/ThrillTheBurgDesktop1.png');
+        background-position: center;
+        background-size: 80%;
+        background-repeat: no-repeat;
+    }
+
+    #mainContainer {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    .con1 {
+        padding: 0 10%;
+    }
+
+    .con2 .row1 {
+        padding: 0 10%;
+    }
+
+    .con2 p {
+        padding: 0 10%;
+    }
+
+    .display-5 {
+        font-size: 300%;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .form-control {
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+
 }
